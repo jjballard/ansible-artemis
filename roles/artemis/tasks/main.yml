@@ -1,0 +1,19 @@
+- name: be sure wine is installed
+  yum: pkg=wine state=installed
+  tags: wine
+
+- name: install winetricks
+  tags: wine
+  copy: src=/usr/bin/winetricks dest=/usr/bin/winetricks owner:root group:root mode=0755
+
+#- name: Copy Artemis Installer
+#  become: yes
+#  become_user: artemis
+#  copy: src=/home/artemis/ArtemisSBS_2.exe dest=/home/artemis/ArtemisSBS_2.exe owner=artemis group=artemis mode=0755
+
+#- name: Copy Artemis Upgrade Installer
+#  become: yes
+#  become_user: artemis
+#  copy: src=/home/artemis/Artemis_Upgrade_v2_1_1.exe dest=/home/artemis/Artemis_Upgrade_v2_1_1.exe owner=artemis group=artemis mode=0755
+#  command: wine ~/ArtemisSBS_2.exe
+#  command: wine ~/Artemis_Upgrade_v2_1_1.exe
